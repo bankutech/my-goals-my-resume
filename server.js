@@ -195,8 +195,19 @@ const initializeDb = async () => {
       [crypto.randomUUID(), resumeId2, 'Web Technologies', 'HTML5, CSS3, JavaScript, React, Responsive Design', 1]);
   }
 };
-
-initializeDb().then(() => console.log("Database initialized")).catch(console.error);
+let dbInitialized = false;
+app.use(async (req, res, next) => {
+  try {
+    if (!dbInitialized) {
+      await initializeDb();
+      dbInitialized = true;
+      console.log("Database initialized on first request");
+    }
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
 
 // Helper to fetch full resume tree
 const getFullResume = async (resumeId) => {
@@ -255,9 +266,17 @@ app.get('/api/public/resumes/:public_id', async (req, res) => {
 app.post('/api/resumes', async (req, res) => {
   try {
     const publicId = crypto.randomUUID();
+    
+    // Ensure we have a user
+    let user = await get('SELECT id FROM users LIMIT 1');
+    if (!user) {
+      await run("INSERT INTO users (name, email) VALUES (?, ?)", ['Demo User', 'demo@example.com']);
+      user = await get('SELECT id FROM users LIMIT 1');
+    }
+
     const result = await run(`
       INSERT INTO resumes (user_id, public_id, title) VALUES (?, ?, ?)
-    `, [1, publicId, req.body.title || 'Untitled Resume']); // Using mock user 1
+    `, [user.id, publicId, req.body.title || 'Untitled Resume']);
     
     const newResume = await getFullResume(result.lastID);
     res.json(newResume);
