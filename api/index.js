@@ -173,25 +173,31 @@ const initializeDb = async () => {
       [crypto.randomUUID(), resumeId2, 'SRM Institute of Science and Technology', 'Bachelor of Technology in Computer Science Engineering (AI & ML Specialization)', 'Chennai, Tamil Nadu, India', 'Aug 2024', 'May 2028', 0]);
 
     await run(`INSERT INTO experience (id, resume_id, company, role, location, start_date, end_date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'SRM Insider Community', 'Corporate Member', 'Chennai, Tamil Nadu, India', 'Oct 2025', 'Present', 'Actively engaged in tech community initiatives, collaborating with peers on knowledge-sharing and skill development\nParticipated in organizing technical events and workshops to foster innovation and learning within the student community', 0]);
+      [crypto.randomUUID(), resumeId2, 'SRM Insider Community', 'Technical Core Member', 'Chennai, Tamil Nadu, India', 'Oct 2024', 'Present', 'Spearheaded technical community initiatives, organizing interactive coding workshops and hackathons for 100+ university students\nCollaborated with a cross-functional team of 10+ peers to facilitate knowledge-sharing sessions on modern web development and software engineering best practices', 0]);
 
     await run(`INSERT INTO projects (id, resume_id, name, tech, date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Moodwave', 'React, JavaScript, HTML/CSS, API Integration', '2025', 'Developed a mood-tracking web application enabling users to log emotional states and visualize patterns over time\nImplemented responsive UI components using React hooks and modern JavaScript ES6+ features\nIntegrated third-party APIs for data persistence and enhanced user experience with real-time feedback', 0]);
+      [crypto.randomUUID(), resumeId2, 'Moodwave | Full Stack Web Application', 'React, Node.js, Express, REST APIs, Vercel', '2025', 'Engineered a dynamic mood-tracking application using React hooks, allowing users to log daily emotional states and visualize long-term trends\nIntegrated external RESTful APIs for real-time data fetching and implemented JSON-based data persistence to ensure reliable state management\nOptimized frontend rendering logic, reducing UI latency and delivering a seamless, mobile-responsive experience across devices', 0]);
 
     await run(`INSERT INTO projects (id, resume_id, name, tech, date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Student Planner Portal', 'HTML, CSS, JavaScript, Frontend Development', '2025', 'Built an interactive student planner with task management, calendar integration, and deadline tracking features\nDesigned intuitive user interface with focus on usability and accessibility standards\nImplemented local storage functionality for persistent data across browser sessions', 1]);
+      [crypto.randomUUID(), resumeId2, 'Student Planner Portal | Task Management System', 'JavaScript, HTML5, CSS3, DOM Manipulation', '2025', 'Architected a client-side student productivity platform featuring dynamic task management, deadline tracking, and calendar functionalities\nLeveraged Web Storage API (LocalStorage) to engineer a persistent database solution, ensuring zero data loss across browser sessions\nDesigned an accessible, interactive user interface utilizing modern CSS Grid/Flexbox, improving overall user retention and task completion rates', 1]);
 
     await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, '2nd Prize Winner \u2013 Technical Hackathon', 'Digisys Innosol Pvt. Ltd.', '', 0]);
+      [crypto.randomUUID(), resumeId2, '2nd Prize Winner \u2013 Technical Hackathon (Digisys Innosol Pvt. Ltd.)', 'Prototyped and pitched a functional software solution under a strict 24-hour deadline, competing against 50+ teams', '2025', 0]);
 
     await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'MyCaptain Web Development Course', 'Completed comprehensive training', '', 1]);
+      [crypto.randomUUID(), resumeId2, 'MyCaptain Web Development Certification', 'Completed comprehensive training in modern full-stack web development principles', '2024', 1]);
 
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Programming Languages', 'C, C++, Python, JavaScript (ES6+)', 0]);
+      [crypto.randomUUID(), resumeId2, 'Languages', 'Python, C/C++, JavaScript (ES6+), HTML5, CSS3, SQL', 0]);
     
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Web Technologies', 'HTML5, CSS3, JavaScript, React, Responsive Design', 1]);
+      [crypto.randomUUID(), resumeId2, 'Frontend', 'React.js, Tailwind CSS, Responsive Design', 1]);
+
+    await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
+      [crypto.randomUUID(), resumeId2, 'Backend & Databases', 'Node.js, Express.js, SQLite, REST APIs', 2]);
+
+    await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
+      [crypto.randomUUID(), resumeId2, 'Tools & Technologies', 'Git, GitHub, Vercel, API Integration, JSON', 3]);
   }
 };
 let dbInitialized = false;
