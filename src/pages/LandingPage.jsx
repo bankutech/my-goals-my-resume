@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { 
-  FileText, Sparkles, CheckCircle2, ChevronRight, LayoutTemplate, 
+  FileText, Sparkles, CheckCircle2, LayoutTemplate, 
   Target, Download, Wand2, ArrowRight, XCircle, FileWarning, Eye
 } from 'lucide-react';
 
 export default function LandingPage() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [atsScore, setAtsScore] = useState(40);
   const [aiStep, setAiStep] = useState(0);

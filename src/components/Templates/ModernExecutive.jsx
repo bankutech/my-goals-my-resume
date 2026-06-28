@@ -1,5 +1,5 @@
 import React from 'react';
-import { parseBullets, formatUrl } from '../../utils/textUtils';
+import { parseBullets } from '../../utils/textUtils';
 
 const ModernExecutive = ({ data }) => {
   return (

@@ -5,7 +5,6 @@ import crypto from 'crypto';
 import fs from 'fs';
 
 const app = express();
-const port = 3114;
 
 process.on('uncaughtException', err => fs.writeFileSync('err.log', err.stack));
 process.on('unhandledRejection', err => fs.writeFileSync('err.log', err.stack));
