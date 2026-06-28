@@ -1,16 +1,64 @@
-# React + Vite
+# MyGoalsMyResuME 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance, ATS-friendly resume builder designed to help you stand out. Build a resume that opens doors with intelligent guidance and beautiful premium templates.
 
-Currently, two official plugins are available:
+![Live on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat&logo=vite&logoColor=FFD62E)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Live Preview Editor:** See your changes instantly as you type.
+- **Multiple Premium Templates:** Choose from beautifully crafted designs, including:
+  - Classic ATS
+  - Modern Executive
+  - Minimal
+  - Developer
+  - Campus Placement
+  - Professional
+- **ATS-Optimized:** Built specifically to pass through Applicant Tracking Systems (ATS) cleanly.
+- **Serverless Architecture:** Natively configured to run blazing fast on Vercel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React 19, Vite, Tailwind CSS v4, Lucide React (Icons)
+- **Backend:** Node.js, Express.js
+- **Database:** SQLite (Memory / `/tmp` persistent for Vercel adaptation)
+- **Drag & Drop:** `@dnd-kit`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Quick Start (Local Development)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/bankutech/my-goals-my-resume.git
+   cd my-goals-my-resume
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   *This uses `concurrently` to launch both the Vite frontend (port 5114) and the Express backend (port 3114) at the same time.*
+
+## ☁️ Deployment
+
+This project is configured out-of-the-box for **Vercel**. 
+
+1. Ensure you have the Vercel CLI installed (`npm i -g vercel`)
+2. Run the deployment command:
+   ```bash
+   vercel --prod
+   ```
+*Note: Due to Vercel's ephemeral serverless architecture, the local SQLite database resets frequently. For true production persistence, consider migrating the database connection to a cloud provider like Vercel Postgres.*
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+
+---
+*Crafted with precision for modern professionals.*
