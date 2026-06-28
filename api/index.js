@@ -176,28 +176,37 @@ const initializeDb = async () => {
       [crypto.randomUUID(), resumeId2, 'SRM Insider Community', 'Technical Core Member', 'Chennai, Tamil Nadu, India', 'Oct 2024', 'Present', 'Spearheaded technical community initiatives, organizing interactive coding workshops and hackathons for 100+ university students\nCollaborated with a cross-functional team of 10+ peers to facilitate knowledge-sharing sessions on modern web development and software engineering best practices', 0]);
 
     await run(`INSERT INTO projects (id, resume_id, name, tech, date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Moodwave | Full Stack Web Application', 'React, Node.js, Express, REST APIs, Vercel', '2025', 'Engineered a dynamic mood-tracking application using React hooks, allowing users to log daily emotional states and visualize long-term trends\nIntegrated external RESTful APIs for real-time data fetching and implemented JSON-based data persistence to ensure reliable state management\nOptimized frontend rendering logic, reducing UI latency and delivering a seamless, mobile-responsive experience across devices', 0]);
+      [crypto.randomUUID(), resumeId2, 'AI Memory Assistant for Dementia Care', 'Next.js, Node.js, AI APIs, React', '2026', 'Engineered a full-stack AI-powered dementia care application using Next.js and Node.js, integrating external AI APIs for intelligent memory prompts\nImplemented Server-Side Rendering (SSR) to optimize load times and accessibility, delivering a highly responsive user experience', 0]);
 
     await run(`INSERT INTO projects (id, resume_id, name, tech, date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Student Planner Portal | Task Management System', 'JavaScript, HTML5, CSS3, DOM Manipulation', '2025', 'Architected a client-side student productivity platform featuring dynamic task management, deadline tracking, and calendar functionalities\nLeveraged Web Storage API (LocalStorage) to engineer a persistent database solution, ensuring zero data loss across browser sessions\nDesigned an accessible, interactive user interface utilizing modern CSS Grid/Flexbox, improving overall user retention and task completion rates', 1]);
+      [crypto.randomUUID(), resumeId2, 'Moodwave | Emotion-Adaptive Player', 'React, Node.js, Express.js, MySQL, Web Audio API', '2025', 'Architected a full-stack emotion-adaptive music application using React, Node.js, Express, and a relational MySQL database\nIntegrated the Web Audio API and external music APIs to generate real-time audio visualizations and personalized user recommendations', 1]);
+
+    await run(`INSERT INTO projects (id, resume_id, name, tech, date, details, order_idx) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [crypto.randomUUID(), resumeId2, 'ClauseGuard | AI Legal Contract Analyzer', 'Node.js, Express.js, SQLite, JWT, HTML/CSS/JS', 'Aug 2026', 'Engineered an AI-driven legal contract analyzer utilizing a Node.js/Express.js backend and an SQLite database to process and parse PDF documents\nImplemented secure user authentication with JWT and built a responsive frontend to generate interactive, real-time risk visualizations', 2]);
 
     await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, '2nd Prize Winner \u2013 Technical Hackathon (Digisys Innosol Pvt. Ltd.)', 'Prototyped and pitched a functional software solution under a strict 24-hour deadline, competing against 50+ teams', '2025', 0]);
+      [crypto.randomUUID(), resumeId2, '1st Rank Winner \u2013 Elite Hack 1.0 Hackathon', 'Elite Coder', '2025', 0]);
 
     await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'MyCaptain Web Development Certification', 'Completed comprehensive training in modern full-stack web development principles', '2024', 1]);
+      [crypto.randomUUID(), resumeId2, '2nd Prize Winner \u2013 Technical Hackathon', 'Digisys Innosol Pvt. Ltd.', '2025', 1]);
+
+    await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
+      [crypto.randomUUID(), resumeId2, 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate', 'Oracle', '2025', 2]);
+
+    await run(`INSERT INTO certifications (id, resume_id, name, issuer, date, order_idx) VALUES (?, ?, ?, ?, ?, ?)`,
+      [crypto.randomUUID(), resumeId2, 'Python Certification & Web Development Course', 'Coursera / MyCaptain', '2024', 3]);
 
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Languages', 'Python, C/C++, JavaScript (ES6+), HTML5, CSS3, SQL', 0]);
+      [crypto.randomUUID(), resumeId2, 'Programming Languages', 'Python, C, C++, JavaScript (ES6+)', 0]);
     
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Frontend', 'React.js, Tailwind CSS, Responsive Design', 1]);
+      [crypto.randomUUID(), resumeId2, 'Frontend & UI', 'HTML5, CSS3, React.js, Responsive Design', 1]);
 
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Backend & Databases', 'Node.js, Express.js, SQLite, REST APIs', 2]);
+      [crypto.randomUUID(), resumeId2, 'Backend & Databases', 'Node.js, Express.js, MySQL, SQLite, REST APIs', 2]);
 
     await run(`INSERT INTO skills (id, resume_id, category, items, order_idx) VALUES (?, ?, ?, ?, ?)`,
-      [crypto.randomUUID(), resumeId2, 'Tools & Technologies', 'Git, GitHub, Vercel, API Integration, JSON', 3]);
+      [crypto.randomUUID(), resumeId2, 'AI & Machine Learning', 'Pandas, NumPy, ML Fundamentals, API Integration', 3]);
   }
 };
 let dbInitialized = false;
